@@ -558,54 +558,26 @@
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide" name="appuntamento" data-netlify="true" method="POST">
-        <div class="popup_box ">
-            <div class="popup_inner">
-                <h3>Richiedi un appuntamento</h3>
-                <form action="#">
-                    <div class="row">
-                        <div class="col-xl-6 col-md-6">
-                            <input name="dataUp" id="datepicker" placeholder="Date">
-                        </div>
-                        <div class="col-xl-6 col-md-6">
-                            <input name="orario"id="timepicker" placeholder="time">
-                        </div>
-                        <div class="col-xl-6 col-md-6">
-                            <select class="form-select wide" id="default-select" class="" name="servizio">
-                                <option data-display="Choose services">Taglio</option>
-                                <option value="1">Piega</option>
-                                <option value="2">Colore</option>
-                                <option value="3">Altro</option>
-                            </select>
-                        </div>
-                        <!--
-                            <div class="col-xl-6 col-md-6">  barbieri
-                            <select class="form-select wide" id="default-select" class="">
-                                <option data-display="Choose Barbers">Choose Barbers</option>
-                                <option value="1">Zaki</option>
-                                <option value="2">Ronky</option>
-                                <option value="3">kalu</option>
-                            </select>
-                        </div>
-                        -->
-                        
-                        <div class="col-xl-6 col-md-6">
-                            <input name="nome"type="text" placeholder="Your name">
-                        </div>
-                        <div class="col-xl-6 col-md-6">
-                            <input name="phone"type="text" placeholder="Phone no">
-                        </div>
-                        <div class="col-xl-12">
-                            <input name="clientEmail" type="email" placeholder="Your email">
-                        </div>
-                        <div class="col-xl-12">
-                            <button type="submit" class="boxed-btn3">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </form>
+    <form name="contact" id="test-form" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Your Role: <select name="role[]" multiple>
+            <option value="leader">Leader</option>
+            <option value="follower">Follower</option>
+          </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
     <!-- form itself end -->
     <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
