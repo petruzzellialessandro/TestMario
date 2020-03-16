@@ -651,7 +651,7 @@
             }
 
         });
-        $('#datepicker3').on("dp.change", function(e){
+        $('#datepicker3').on("dp.change", function(e){  
             var d = new Date();
             d.toLocaleDateString();
             $('#datepicker4').data("DateTimePicker").minDate(d.getDate())
