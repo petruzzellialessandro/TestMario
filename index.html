@@ -569,7 +569,7 @@
                             <input name="Data Appuntamento" id="datepicker" placeholder="Data">
                         </div>
                         <div class="col-xl-6 col-md-6">
-                            <input name="Orario" id="timepicker" placeholder="Orario">
+                            <input name="Orario" id="timepicker" placeholder="Orario" min="00:00" max="23">
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <select class="form-select wide" id="default-select" class="" name="servizio">
@@ -643,6 +643,10 @@
             //     icons: {
             //      rightIcon: '<span class="fa fa-caret-down"></span>'
             //  }
+            if ($('#datepicker').datepicker> this.Date)
+            {
+                alert.write("Data non corretta");
+            }
         });
         $('#datepicker2').datepicker({
             iconsLibrary: 'fontawesome',
