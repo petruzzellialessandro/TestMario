@@ -643,10 +643,6 @@
             //     icons: {
             //      rightIcon: '<span class="fa fa-caret-down"></span>'
             //  }
-            if ($('#datepicker').datepicker> this.Date)
-            {
-                alert.write("Data non corretta");
-            }
         });
         $('#datepicker2').datepicker({
             iconsLibrary: 'fontawesome',
@@ -654,6 +650,11 @@
                 rightIcon: '<span class="fa fa-caret-down"></span>'
             }
 
+        });
+        $('#datepicker3').on("dp.change", function(e){
+            $('#datepicker4').data("DateTimePicker").minDate(e.date)
+        })
+            
         });
         var timepicker = $('#timepicker').timepicker({
             format: 'HH.MM'
