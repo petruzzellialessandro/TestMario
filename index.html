@@ -652,9 +652,9 @@
 
         });
         $('#datepicker3').on("dp.change", function(e){
+            iconsLibrary: 'fontawesome',
             var d = new Date();
             d.toLocaleDateString();
-            iconsLibrary: 'fontawesome',
             $('#datepicker4').data("DateTimePicker").minDate(d.getDate())
         });
         var timepicker = $('#timepicker').timepicker({
