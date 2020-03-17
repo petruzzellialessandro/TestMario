@@ -609,8 +609,8 @@
     </form>
     <!-- form itself end -->
     <!-- JS here -->
-    <!--<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>-->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -636,7 +636,7 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-    <script>
+    <!--<script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
             disableDaysOfWeek: [0, 0],
@@ -651,17 +651,33 @@
             }
 
         });
-    </script>
+    </script>-->
     <script>
         function Controllo_Data()
         {
-            var x = new Date();
+            var x = new Date(document.getElementById("datepicker").value);
             var oggi = new Date();
-            x.getMilliseconds(document.getElementById("datepicker"));
-            if (x<oggi)
+            document.write(x);
+            if (x.getFullYear()<oggi.getFullYear())
             {
-                alert.write("Data errata");
-                document.write("Data errata");
+                alert("Data errata");
+                document.getElementById("datepicker").innerHTML ="";
+            }
+            else if (x.getFullYear()==oggi.getFullYear())
+            {
+                if (x.getMonth()<oggi.getMonth())
+                {
+                    alert("Data errata");
+                    document.getElementById("datepicker").innerHTML ="";
+                }
+                else if (x.getMonth()==oggi.getMonth())
+                {
+                    if (x.getDay()<oggi.getDay())
+                    {
+                        alert("Data errata");
+                        document.getElementById("datepicker").innerHTML ="";
+                    }
+                }
             }
 
         }
