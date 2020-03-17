@@ -652,13 +652,20 @@
 
         });
     </script>
-<script>
+    <script>
         function Controllo_Data()
         {
-            alert.write("Ciao");
+            var x = new Date();
+            var oggi = new Date();
+            x.getMilliseconds(document.getElementById("datepicker"));
+            if (x<oggi)
+            {
+                documen.write("Data errata")
+            }
+
         }
 
-</script>
+    </script>
 </body>
 
 </html>
