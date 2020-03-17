@@ -566,7 +566,7 @@
                 <h3>Richiedi un appuntamento</h3>
                     <div class="row">
                         <div class="col-xl-6 col-md-6">
-                            <input name="Data Appuntamento" id="datepicker" placeholder="Data">
+                            <input name="Data Appuntamento" id="datepicker" placeholder="Data" onsubmit="Controllo_Data">
                         </div>
                         <div class="col-xl-6 col-md-6">
                             <input name="Orario" id="timepicker" placeholder="Orario" min="00:00" max="23">
@@ -651,14 +651,10 @@
             }
 
         });
-        $('#datepicker3').on("dp.change", function(e){  
-            var d = new Date();
-            d.toLocaleDateString();
-            $('#datepicker4').data("DateTimePicker").minDate(d.getDate())
-        });
-        var timepicker = $('#timepicker').timepicker({
-            format: 'HH.MM'
-        });
+        document.getElementById(datepicker).onsubmit=function(){
+            alert.write("Ciao");
+        }
+
     </script>
 </body>
 
